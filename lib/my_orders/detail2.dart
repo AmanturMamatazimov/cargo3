@@ -1,19 +1,15 @@
-import 'package:cargo_app/my_orders/table_avtive.dart';
 import 'package:cargo_app/styles/app_colors.dart';
-import 'package:cargo_app/styles/app_text_styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Diteals extends StatefulWidget {
-  const Diteals({Key? key}) : super(key: key);
+class Detail2 extends StatefulWidget {
+  const Detail2({Key? key}) : super(key: key);
 
   @override
-  State<Diteals> createState() => _DitealsState();
+  State<Detail2> createState() => _Detail2State();
 }
 
-class _DitealsState extends State<Diteals> {
+class _Detail2State extends State<Detail2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,32 +66,19 @@ class _DitealsState extends State<Diteals> {
                       ),
                     ),
 
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const TableActive(),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        width: 140,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color(0xff0E77EF)
-                        ),
-                        child: Center(
-                          child: Text(
-                              'Данные об активе'
-                          ),
+                    Container(
+                      width: 140,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xff0E77EF)
+                      ),
+                      child: Center(
+                        child: Text(
+                            'Данные об активе'
                         ),
                       ),
                     ),
-
-
-
                   ],
                 ),
               ),
@@ -201,19 +184,14 @@ class _DitealsState extends State<Diteals> {
                             Text('Отправитель',style: TextStyle(color: AppColors.black38),),
                             Text('Анна Смолинская')
                           ],
-                        ),
-
-                      ],
+                        ),],
                     ),
-
-
                     SizedBox(height: 19,),
                     Row(
                       children: [
                         SvgPicture.asset(
                           'assets/icons/frm8.svg',
-                          color:
-                          AppColors.blue,
+                          color: AppColors.blue,
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -221,9 +199,7 @@ class _DitealsState extends State<Diteals> {
                             Text('Получатель',style: TextStyle(color: AppColors.black38),),
                             Text('Марина Ивановна')
                           ],
-                        ),
-
-                      ],
+                        ),],
                     ),
 
                     SizedBox(height: 19,),
@@ -266,7 +242,6 @@ class _DitealsState extends State<Diteals> {
                 ),
               )
             ],
-
           ),
 
         ),

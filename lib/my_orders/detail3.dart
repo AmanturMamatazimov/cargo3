@@ -1,19 +1,15 @@
-import 'package:cargo_app/my_orders/table_avtive.dart';
 import 'package:cargo_app/styles/app_colors.dart';
-import 'package:cargo_app/styles/app_text_styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Diteals extends StatefulWidget {
-  const Diteals({Key? key}) : super(key: key);
+class Deatail3 extends StatefulWidget {
+  const Deatail3({Key? key}) : super(key: key);
 
   @override
-  State<Diteals> createState() => _DitealsState();
+  State<Deatail3> createState() => _Deatail3State();
 }
 
-class _DitealsState extends State<Diteals> {
+class _Deatail3State extends State<Deatail3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,32 +66,19 @@ class _DitealsState extends State<Diteals> {
                       ),
                     ),
 
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const TableActive(),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        width: 140,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color(0xff0E77EF)
-                        ),
-                        child: Center(
-                          child: Text(
-                              'Данные об активе'
-                          ),
+                    Container(
+                      width: 140,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xff0E77EF)
+                      ),
+                      child: Center(
+                        child: Text(
+                            'Данные об активе'
                         ),
                       ),
                     ),
-
-
-
                   ],
                 ),
               ),
@@ -164,7 +147,8 @@ class _DitealsState extends State<Diteals> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Дата отправления',style: TextStyle(color: AppColors.black38),),
+                            Text('Дата отправления',style: TextStyle(color:
+                            AppColors.black38),),
                             Text('22.04.22')
                           ],
                         ),
@@ -212,8 +196,7 @@ class _DitealsState extends State<Diteals> {
                       children: [
                         SvgPicture.asset(
                           'assets/icons/frm8.svg',
-                          color:
-                          AppColors.blue,
+                          color: AppColors.blue,
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -266,7 +249,6 @@ class _DitealsState extends State<Diteals> {
                 ),
               )
             ],
-
           ),
 
         ),

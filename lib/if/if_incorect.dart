@@ -1,13 +1,9 @@
+import 'package:cargo_app/if/search.dart';
 import 'package:cargo_app/styles/app_colors.dart';
 import 'package:cargo_app/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
-
-
-
-
 
 class IfIncorrect extends StatefulWidget {
 
@@ -42,23 +38,33 @@ class _IfIncorrectState extends State<IfIncorrect> {
             autofocus: false,
             decoration: InputDecoration(
               hintText: "Номер заказа",
-              suffixIcon: GestureDetector(
-                  onTap: () {
-                    FocusScope.of(context).requestFocus(new FocusNode());
-                    if(t1.text!='') {
-                      arr=t1.text.split(',');
-                        view = true;
-                      } else view=false;
-                    t1.text='';
-                    setState(() {
-
-                    });
-                    print(view);
-                  },
-                  child: Icon(Icons.search),
+                suffixIcon:
+                // GestureDetector(
+              //     onTap: () {
+              //       FocusScope.of(context).requestFocus(new FocusNode());
+              //       if(t1.text!='') {
+              //         arr=t1.text.split(',');
+              //           view = true;
+              //         } else view=false;
+              //       t1.text='';
+              //       setState(() {
+              //
+              //       });
+              //       print(view);
+              //     },
+                  GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Search(),
+                          ),
+                        );
+                      },
+                      child: Icon(Icons.search))
             ),
           ),
-        ),
+
         Text(
             'Отслеживайте до 10 номеров одновременно - введите их, разделяя запятыми',
             style: AppTextStyles.blackGrey12Regular),
