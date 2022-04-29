@@ -2,6 +2,10 @@ import 'package:cargo_app/styles/app_text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
+
+
+
 class Duty extends StatefulWidget {
   const Duty({Key? key}) : super(key: key);
 
