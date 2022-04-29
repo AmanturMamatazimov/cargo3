@@ -15,6 +15,28 @@ class MyProfile extends StatefulWidget {
 }
 
 class _MyProfileState extends State<MyProfile> {
+
+  Widget buildEditIcon(Color color) => buildCircle(
+      color: color,
+      all: 8,
+
+      child: Icon(
+        Icons.edit,
+        color: Colors.white,
+        size: 10,
+      )
+  );
+
+  Widget buildCircle({
+    required Widget child,
+    required double all,
+    required Color color,
+  }) => ClipOval(
+    child: Container(padding: EdgeInsets.all(all),
+      color: color,
+      child: child,
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,17 +47,45 @@ class _MyProfileState extends State<MyProfile> {
         padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 32),
         child: Column(
            children: <Widget>[
-             Container(
-               width: 120.w,
-               height: 120.h,
-               decoration: BoxDecoration(
-                 shape: BoxShape.circle,
-                 image: DecorationImage(
-                   fit: BoxFit.cover,
-                   image: AssetImage('assets/marina.png'),
-                 )
+             // Container(
+             //   width: 120.w,
+             //   height: 120.h,
+             //   decoration: BoxDecoration(
+             //     shape: BoxShape.circle,
+             //     image: DecorationImage(
+             //       fit: BoxFit.cover,
+             //       image: AssetImage('assets/marina.png'),
+             //     )
+             //   ),
+             // ),
+
+
+             // Padding(
+             //   padding: const EdgeInsets.only(left: 128, right: 127, top: 26),
+             //
+
+             Stack(
+                   children:[
+                     Container(
+                       height: 120.w,
+                       width: 120.h,
+                       decoration: BoxDecoration(
+                           shape: BoxShape.circle,
+                           image: DecorationImage(
+                             fit: BoxFit.fill,
+                             image: AssetImage('assets/marina.png'),
+                           )
+                       ),
+                       // child: Image.asset('assets/marina.png'),
+
+                     ),
+                     Positioned(
+                         bottom: 80,
+                         right: 9,
+                         child: buildEditIcon(Colors.blue))
+                   ]
                ),
-             ),
+
              SizedBox(height: 32.h),
              Container(
                padding: EdgeInsets.symmetric(vertical: 15),
@@ -97,7 +147,7 @@ class _MyProfileState extends State<MyProfile> {
                padding: EdgeInsets.symmetric(vertical: 15),
                child:  Row(
                  children: [
-                   Icon(Icons.transgender_rounded,color: Colors.blue),
+                   Icon(Icons.female,color: Colors.blue),
                    SizedBox(width: 20.w),
                    Text('Жен', style: AppTextStyles.profile,),
                  ],
